@@ -21,8 +21,8 @@ let cantCartasAMostrar = 0;
 //Toma el body del html
 const cuerpo = document.body
 
-/*Hace el innerHTML en cards, crea un nuevo Objeto Carta, a esa Carta le asigna un numero y un palo 
-(Que es el mismo que se muestra en el innerHTML), y agrega esa carta a lai lista de cartasIngresadas*/
+/*Hace el innerHTML en cards, crea un nuevo Objeto Carta, a esa Carta le asigna un numero, un palo y un id
+(Que es el mismo que se muestra en el innerHTML), y agrega esa carta a la lista de cartasIngresadas*/
 function mostrarCard() {
     let paloCarta = ponerPalo();
     let numeroCarta = ponerNumero();
@@ -108,10 +108,28 @@ const mostrarCantCartasSegunIngreso = () => {
 function ordenarCartas(){
     for (let j=0; j < cartasIngresadas.length; j++){
         for(let i = 0; i < cartasIngresadas.length; i++){
-            if(cartasIngresadas[i].id > cartasIngresadas[i+1].id){
-                var temp = cartasIngresadas[i]
-                cartasIngresadas[i] = cartasIngresadas[i+1]
-                cartasIngresadas[i+1] = temp
+            if(cartasIngresadas[i+1] != undefined){
+                if(cartasIngresadas[i].id > cartasIngresadas[i+1].id){
+                    var temp = cartasIngresadas[i]
+                    cartasIngresadas[i] = cartasIngresadas[i+1]
+                    cartasIngresadas[i+1] = temp
+                }
+            }
+            for (let i = 0; i <  cartasIngresadas.length; i++) {
+                ordCartas.innerHTML +=
+                `<div class="cartasOrdenadas">
+                    <div class="card" >
+                        <div class="palo" id="paloArriba">
+                            ${cartasIngresadas[i].palo}
+                        </div>
+                        <div class="numCarta numero" id="numCarta">
+                            ${cartasIngresadas[i].numero}
+                        </div>
+                        <div class="paloInfe" id="paloAbajo">
+                            ${cartasIngresadas[i].palo}
+                        </div>
+                    </div>
+                </div>`
             }
         }
     }
@@ -121,21 +139,21 @@ function ordenarCartas(){
 /*Al hacer click en Sorteo, se ordenan las cartas de cartasIngresadas y en ordCartas se hace un 
 innerHTML de cada carta de la lista que devuelve ordenarCartas() (que se guarda en cartasEnOrdenCorrecto)*/
 function mostrarCartasOrdenadas(){
-    var cartasEnOrdenCorrecto = ordenarCartas(cartasIngresadas);
-    console.log(cartasEnOrdenCorrecto)
-    for (let i = 0; i <  cartasEnOrdenCorrecto.length; i++) {
-    ordCartas.innerHTML +=
-    `<div class="card" >
-        <div class="palo" id="paloArriba">
-            ${cartasEnOrdenCorrecto[i].palo}
-        </div>
-        <div class="numCarta numero" id="numCarta">
-            ${cartasEnOrdenCorrecto[i].numero}
-        </div>
-        <div class="paloInfe" id="paloAbajo">
-            ${cartasEnOrdenCorrecto[i].palo}
-        </div>
-    </div>`
+    for (let i = 0; i <  cartasIngresadas.length; i++) {
+        ordCartas.innerHTML +=
+        `<div class="cartasOrdenadas">
+            <div class="card" >
+                <div class="palo" id="paloArriba">
+                    ${cartasIngresadas[i].palo}
+                </div>
+                <div class="numCarta numero" id="numCarta">
+                    ${cartasIngresadas[i].numero}
+                </div>
+                <div class="paloInfe" id="paloAbajo">
+                    ${cartasIngresadas[i].palo}
+                </div>
+            </div>
+        </div>`
     }
 }
 
