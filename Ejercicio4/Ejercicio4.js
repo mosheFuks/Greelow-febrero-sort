@@ -106,6 +106,7 @@ const mostrarCantCartasSegunIngreso = () => {
 }
 
 function ordenarCartas(){
+    let numero = 0;
     for (let j=0; j < cartasIngresadas.length; j++){
         for(let i = 0; i < cartasIngresadas.length; i++){
             if(cartasIngresadas[i+1] != undefined){
@@ -113,22 +114,12 @@ function ordenarCartas(){
                     var temp = cartasIngresadas[i]
                     cartasIngresadas[i] = cartasIngresadas[i+1]
                     cartasIngresadas[i+1] = temp
-                    for (let i = 0; i <  cartasIngresadas.length; i++) {
-                        ordCartas.innerHTML +=
-                        `<div class="cartasOrdenadas">
-                            <div class="card" >
-                                <div class="palo" id="paloArriba">
-                                    ${cartasIngresadas[i].palo}
-                                </div>
-                                <div class="numCarta numero" id="numCarta">
-                                    ${cartasIngresadas[i].numero}
-                                </div>
-                                <div class="paloInfe" id="paloAbajo">
-                                    ${cartasIngresadas[i].palo}
-                                </div>
-                            </div>
-                        </div>`
-                    }
+                    ordCartas.innerHTML += 
+                    `<div class="numDePase">
+                        <p> ${numero++} </p>
+                    </div>`
+                    mostrarCartasOrdenadas()
+
                 }
             }
         }

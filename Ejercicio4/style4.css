@@ -75,3 +75,8 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.numDePase{
+    margin-right: 14px;
+    font-size: 45px;
+}
