@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta</title>
+    <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+    <section class="container-fluid fondo">
+        <div>
+            <div class="ingreso">
+                <p style="font-weight: bolder;">Original: </p>
+                <input type="text" class="form-control ingre" id="cantCartas" >
+                <button class="btn" onclick="mostrarCantCartasSegunIngreso()"> Draw </button>
+                <button class="btn" onclick="ordenarCartas()"> Sorteo </button>
+            </div>
+        </div>
+        <div class="carta" id="cards">
+            <!--Aca van las cartas-->
+        </div>
+        <div>
+            <p style="font-weight: bolder;">Bubble Log</p>
+        </div>
+        <div class="carta" id="orderCards">
+            <!--Aca van las cartas ordenadas-->
+        </div>
+    </section>
+
+
+
+
+
+    <script src="./Ejercicio4.js"></script>
+</body>
+</html>
