@@ -18,12 +18,11 @@ const cuerpo = document.body
 cuerpo.onload = comenzar;
 
 function mostrarCard() {
-    let palo = ""
+    let palo = ponerPalo()
         cards.innerHTML +=
         `<div class="card" >
-            <div class="palo" id="paloArriba">
-            
-                ${palo = ponerPalo()}
+            <div class="palo" {palo === "♥" ? style="color: red;" : style="color: black;"} id="paloArriba">
+                ${palo}
             </div>
             <div class="numCarta numero" id="numCarta">
                 ${ponerNumero()}

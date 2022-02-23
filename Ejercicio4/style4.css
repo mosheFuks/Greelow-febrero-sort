@@ -36,6 +36,12 @@
     font-size: 23px;
 }
 
+.heart{
+    margin-left: 2px;
+    font-size: 23px;
+    color: red;
+}
+
 .paloInfe{
    margin-right: 2px;
    display: flex;

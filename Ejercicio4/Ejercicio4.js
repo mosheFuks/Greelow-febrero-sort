@@ -24,23 +24,23 @@ const cuerpo = document.body
 /*Hace el innerHTML en cards, crea un nuevo Objeto Carta, a esa Carta le asigna un numero y un palo 
 (Que es el mismo que se muestra en el innerHTML), y agrega esa carta a lai lista de cartasIngresadas*/
 function mostrarCard() {
-    let palo = ""
-    let numero = 0;
+    let paloCarta = ponerPalo();
+    let numeroCarta = ponerNumero();
     cards.innerHTML +=
     `<div class="card" >
         <div class="palo" id="paloArriba">
-            ${palo = ponerPalo()}
+            ${paloCarta}
         </div>
         <div class="numCarta numero" id="numCarta">
-            ${numero = ponerNumero()}
+            ${numeroCarta}
         </div>
         <div class="paloInfe" id="paloAbajo">
-            ${palo}
+            ${paloCarta}
         </div>
     </div>`
     var carta = new Object()
-    carta.palo = palo
-    carta.numero = numero
+    carta.palo = paloCarta
+    carta.numero = numeroCarta
     ponerId(carta)
     cartasIngresadas.push(carta)
 }

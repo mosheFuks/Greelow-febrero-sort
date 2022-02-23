@@ -41,12 +41,15 @@
    font-size: 50px;
 }
 
-/*.heart{
-    font-size: 50px;
+.heart{
+    margin-left: 2px;
+    font-size: 23px;
     color: red;
 }
 
-.spade{
+
+
+/*.spade{
     font-size: 50px;
 }
 
