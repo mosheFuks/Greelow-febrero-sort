@@ -72,6 +72,8 @@ function ponerNumero(){
     return numCarta;
 }
 
+/*Para poder ordenar las cartas se le asigna un id a la carta. El id es igual al numero de la carta, pero 
+si el numero es una letra se fija que letra es y lo cambia por un numero */ 
 function ponerId(carta){
         switch(carta.numero){
             case "J":
@@ -117,8 +119,7 @@ function ordenarCartas(){
 }
 
 /*Al hacer click en Sorteo, se ordenan las cartas de cartasIngresadas y en ordCartas se hace un 
-innerHTML de cada carta de la lista que devuelve ordenarCartas() (que se guarda en cartasEnOrdenCorrecto)
-*/
+innerHTML de cada carta de la lista que devuelve ordenarCartas() (que se guarda en cartasEnOrdenCorrecto)*/
 function mostrarCartasOrdenadas(){
     var cartasEnOrdenCorrecto = ordenarCartas(cartasIngresadas);
     console.log(cartasEnOrdenCorrecto)
